@@ -1,0 +1,634 @@
+/* Deroulement vers le bas  */
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* ==========> Composition de nos couleurs definies */
+:root{
+    --blanche:#fff;
+    --Noir:#222;
+    --primaire:#007bc4;
+    --gri:#888;
+    --tomato:#F2401C;
+}
+/* ======= */
+/* ===========> Style global */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* ======= */
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+/* ======= */
+body{
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    color: var(--Noir);
+    background-color: var(--blanche);
+}
+/* ========= */
+ul, li{
+    list-style: none;
+}
+/* ========== */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* ========= */
+img{
+    max-width: 100%;
+}
+/* ========== */
+.promo{
+    background-color: #B4600B;
+    text-align: center;
+    color: var(--blanche);
+    padding: 0.5rem 0;
+}
+
+/* ==========> container */
+.container{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+/* ==========> Medias Querries */
+@media only screen and (max-width:1200px) {
+    .container{
+        padding: 0 3rem;
+    }
+}
+
+/* ==========> Navigation */
+.navigation{
+    height: 7rem;
+    justify-content: space-between;
+}
+
+/* ==========> d-flex : Alignement des elements du menu*/
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+
+/* ==========> Gestion des icons */
+.icon1{
+    display: none;
+}
+/* ==========> Menu et top*/
+.menu .top{
+    display: none;
+}
+
+/* ==========> Gestion du logo */
+.logo{
+    font-weight: 700;
+    font-size: 3rem;
+    padding: 0rem 1.5rem;
+    color: rgb(222, 99, 12);
+}
+.logo span{
+    font-size: 3rem;
+    color: #0d0d78;
+}
+
+/* ==========> nav-item */
+.nav-item:not(:last-child){
+    margin: 0.5rem;
+}
+.nav-item:first-child .nav-link{
+    color: var(--primaire);
+}
+.nav-link{
+    padding: 0 1rem;
+    transition: all 300ms ease-in-out;
+}
+.nav-link:hover{
+    color: var(--primaire);
+}
+
+/* =========> Gestion: div */
+.nav .icons div{
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.nav .icons div:not(:last-child){
+    margin-right: 0.5rem;
+}
+.nav .icons div:hover{
+    color: var(--primaire);
+}
+.nav .icons div:last-child{
+    position: relative;
+}
+
+/* ==========> Stylisation Icons: Shopping (Achats) et du 0 */
+.nav .icons div span{
+    position: absolute;
+    top: -0.5rem;
+    right: -1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blanche);
+    background-color: var(--primaire);
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+}
+/* ==========>  Styliser le 0 du shopping */
+.align-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* ================================================================================================================================================================= */
+/* ======================================================================== DEUXIEME PARTIE ======================================================================= */
+.banniere{
+    height: calc(100vh - 7rem);
+    background-color: beige;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+/* ========================= */
+.banniere-contenu{
+    height: 100%;
+}
+/* ==================== */
+.banniere-contenu .gauche{
+    margin-top: -5rem;
+}
+/* =================== */
+.banniere-contenu .gauche .sous-titre{
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-bottom:1.6rem ;
+}
+/* ===================== */
+.banniere-contenu .gauche .titre{
+    
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: left;
+    font-size: 4rem;
+}
+/* ==================== */
+.banniere-contenu .gauche .couleur{
+    color: var(--primaire);
+}
+/* ==================== */
+.banniere-contenu .gauche h5{
+    font-weight: 400;
+    margin-top: 2rem;
+}
+/* ==========> Notre bouton */
+.btn{
+    display: inline-block;
+    border-radius: 5rem;
+    background-color: var(--primaire);
+    padding: 1.3rem 5rem;
+    color: var(--blanche);
+    font-weight: 600;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
+    margin-top: 4rem;
+}
+/* ============> Gestion de notre image */
+.banniere-contenu .droit img{
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    width: 600px;
+}
+
+
+
+
+/* =====================================================>>>>>>>>>  Modification de l'affichage sur mobile (Version Tablette) ======================================== */
+@media only screen and (max-width:996px){
+    .banniere-contenu .gauche .titre{
+        font-size: 3rem;
+    }
+
+    .btn{
+        padding: 1.2rem 4rem;
+    }
+
+    .banniere-contenu .droit img{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:567px){
+    .banniere{
+        height: calc(90vh - 7rem);
+    }
+
+    .banniere-contenu .gauche{
+        margin-top: -25rem;
+    }
+
+    .banniere-contenu .gauche .titre{
+        margin-bottom: 1rem;
+    }
+
+    .banniere-contenu .droit img{
+        width: 100%;
+        height: 35rem;
+        right: 0;
+    }
+}
+
+
+
+/* ================================================================================================================================================================ */
+/* ======================================================================== PROPRIETES NOUVELLES SECTION ========================================================= */
+
+/* =========> Section */
+.section{
+    padding: 10rem 0 0 0;
+}
+
+.service{
+    border: 1px solid #ccc;
+    padding: 1rem 1rem 2rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ==========> Service-center */
+.service-center{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 5rem;
+}
+
+/* ===========> service */
+.service .icon{
+    background-color: var(--primaire);
+    height: 80px;
+    width: 80px;
+    position: relative;
+     border-radius: 50%;
+}
+
+/* ==========> icon */
+.service .icon i{
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    left: 50%;
+    color: var(--blanche);
+    transform: translate(-50%, -50%);                /* Centre les icons */
+}
+/* ===========> Texte h4 */
+.service h4{
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+/* ==========> proprietes de la classe "text" */
+.service .text{
+    font-size: 1.5rem;
+    color: #777;
+}
+
+
+/* ================================================================================================================================================================ */
+
+
+
+
+
+
+
+/* ================================================================================================================================================================ */
+/* ==================================================================== RESOLUTION VERSION MOBILE ================================================================= */
+
+@media only screen and (max-width:768px){
+    .navigation{
+        padding: 1rem 0;
+    }
+    /* ===================== */
+    .menu{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: var(--blanche);
+        height: 100%;
+        width: 80%;
+        max-width: 45rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 500ms ease-in-out;
+        z-index: 100;
+    }
+    /* ================= */
+    .icon1{
+        display: block;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+    /* =========== */
+    .icons{
+        display: none;
+    }
+    /* ============= */
+    .logo span{
+        color: #0d0d78;
+        font-size: 1.6rem;
+    }
+    /* ============== */
+    .logo a{
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    /* ================ */
+    .menu .top{
+        display: block;
+        position: relative;
+        background-color: var(--primaire);
+        width: 100%;
+        height: 6rem;
+        color: var(--blanche);
+    }
+
+    .top span{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .top span i{
+        font-size: 3rem;
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: start;
+        padding: 2rem 0;
+    }
+
+    .nav-item{
+        margin: 0 0 2rem 0;
+    }
+
+    .nav-link{
+        padding: 0.7rem;
+    }
+
+    /* ==========> Ajout des variables de JS */
+    .menu.monter{
+        left: 0;
+    }
+}
+
+
+
+
+/* ================================================================================================================================================================ */
+/* ================================================================== DEUXIEME SECTION =========================================================================== */
+
+/* ==========> Titre section 2 */
+.titre{
+    font-size: 3rem;
+    text-align: center;margin-bottom: 5rem;
+    font-weight: 600;
+}
+/* ==========> h1 */
+.titre h1{
+    font-weight: 400;
+}
+/* ==========> span */
+.titre span{
+    color: var(--primaire);
+}
+/* ==========> centre-produit */
+.centre-produit{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+/* ===========> produit */
+.produit{
+    text-align: center;
+    padding-bottom: 1rem;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+;.produit:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.produit img{
+    transition: all 500ms ease-in-out;
+}
+.produit:hover img{
+    transform: scale(1.2);
+}
+
+/* ==========> img-cover */
+.produit .img-cover{
+    overflow: hidden;
+}
+
+/* ==========> rating */
+.produit .rating{
+    color: var(--primaire);
+}
+
+
+
+/* ================================================== MODIFICATION DE L'AFFICHAGE DU TITRE ====================================================================== */
+@media only screen and (max-width:567px){
+    .titre{
+        font-size: 2rem;
+    }
+}
+
+
+/* ================================================================================================================================================================ */
+/* =============================================================== TROISIEME SECTION: Formations par catégories =================================================== */
+/* ============> categorie */
+.categorie{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 4vw);
+    gap: 2rem;
+}
+/* ===========> formation */
+.categorie.formation{
+    overflow: hidden;
+}
+/* ==========> images */
+.categorie img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms ease-out;
+}
+/* =========> image de formation1 */
+.categorie.formation1{
+    object-fit: fill;
+}
+/* =========> Effet au survol de la souris:  */
+.categorie img:hover{
+    transform: scale(1.2);
+}
+/* ==========> Les formations: formation1; formation2; formation3; ..... */
+.formation1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+.formation2{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+.formation3{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.formation4{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 9;
+}
+
+
+
+/* ================================================================================================================================================================ */
+/* ============================================================== RESOLUTION POUR LES ECRANS 600PX  =============================================================== */
+@media only screen and (max-width:600px){
+    .formation1{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+    .formation2{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 7;
+        grid-row-end: 11;
+    }
+    .formation3{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 11;
+        grid-row-end: 15;
+    }
+    .formation4{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 15;
+        grid-row-end: 19;
+    }
+}
+
+
+
+
+
+/* ================================================================================================================================================================ */
+/* ======================================================================== GESTION DU FOOTER ==================================================================== */
+
+/* =========> footer */
+.footer{
+    background-color: #020e36;
+    padding: 6rem 1rem 0;
+    line-height: 3rem;
+    margin-top: 5rem;
+}
+/* ========> footer span */
+.footer span{
+    margin-right: 1rem;
+}
+/* ========> footer-container */
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: var(--blanche);
+}
+/* ========> footer-center a */
+.footer-center a:link,
+.footer-center a:visited{
+    display: block;
+    color: var(--gri);
+    font-size: 1.4rem;
+    transition: 0.6s;
+}
+
+/* =======> Survol */
+.footer-center a:hover{
+    color: #B4600B;
+}
+
+/* ========> Tailles des elements: footer-center div */
+.footer-center div{
+    font-size: 1.4rem;
+    color: var(--gri);
+}
+
+/* =======> h3 */
+.footer-center h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+/* =========> copyright */
+.copyright{
+    color: var(--gri);
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 4rem 0 0;
+}
+.copyright a:hover{
+    color: #B4600B;
+}
+
+
+
+
+/* ==================================================================================================================================================================== */
+/* ================================================================ MODIFICATION DE L'AFFICHAGE SUR MOBILE =========================================================== */
+@media only screen and (max-width: 998px) {
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .footer-container{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+
+
+
